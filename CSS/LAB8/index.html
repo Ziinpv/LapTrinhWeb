@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+ 
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Selectors</title>
+
+    <style>
+    * { color: red; }
+    h2 { color: red; }
+    .greencolor { color: green; } /* phần tử nào có giá trị class là greencolor sẽ có màu xanh */
+    #yellowcolor { color: yellow; } /* phần tử có giá trị ID là yellowcolor sẽ có màu vàng */
+    [class] { color: violet; } /* phần tử có thuộc tính là class sẽ có màu tím, không quan tâm giá trị class là gì */
+    h3, p, #yellowcolor { color: blue } /* các phần tử h3, p và phần tử có id="yellowcolor" sẽ có màu blue*/
+    li em { color: red } /* chỉ có các phần tử em là hậu duệ của phần tử li mới có chữ màu đỏ, trong khi các phần tử em còn lại sẽ không bị tác động bởi chỉ dẫn CSS này*/
+    h1 em, h2 em, h3 em { color: red; } /*kết hợp bộ chọn gộp và chọn theo hậu duệ, mọi phần tử em nằm trong h1, hoặc h2, hoặc h3 sẽ có chữ màu đỏ*/
+    li h3 em { color: red; } /*thiết lập chữ màu đỏ cho các phần tử em nằm trong h3 và h3 phải nằm trong li.*/
+    p > em { color: red; } /*làm cho chữ trong phần tử em có màu đỏ, tuy nhiên, chỉ có phần tử em là con trực tiếp của p mới chịu tác động, trong khi các phần tử em khác thì không chịu tác động.*/
+    ul + h2 { color: red; } /*chữ trong phần tử h2 có màu đỏ, tuy nhiên, chỉ có một phần tử h2 nằm ngay sau ul mới chịu tác động, trong khi các phần tử h2 khác thì không chịu tác động.*/  
+    ul ~ h2 { color: red; } /*chữ trong phần tử h2 có màu đỏ, tuy nhiên, chỉ những phần tử h2 nằm sau ul (cùng cha body) mới chịu tác động, trong khi các phần tử h2 nằm phía trước và các vị trí khác thì không chịu tác động*/
+    p.violetcolor { color: violet; } /*Bo chon hon hop*/  
+    </style>
+
+</head>
+
+ 
+
+<body>
+
+    <h2 class="greencolor">The Back of the New $20</h2>
+    
+
+    <p>Have you seen the "Series <em>2004</em> $20 Notes"? The U.S. Treasury has rolled out yet another revamp of the
+
+        U.S. <a href=""><em>twenty</em></a> dollar bill in an effort to stop those pesky counterfeiters once and for
+
+        all.</p>
+
+    <h2 class="greencolor">The first 20s</h2>
+
+    <ul>
+
+        <li>
+
+            <h3>This is <em>first</em> item</h3>
+
+        </li>
+
+        <li>This is <em>second</em> item</li>
+
+        <li>
+
+            <h2>This is <em>third</em> item</h2>
+
+        </li>
+
+    </ul>
+
+    <h2 id="yellowcolor">Too Many <em>20s</em></h2>
+
+    <p class="violetcolor">The last paragraph</p>
+
+    <h2>Another 20s</h2>
+
+</body>
+
+ 
+
+</html>
